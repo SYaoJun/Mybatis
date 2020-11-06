@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!--namespace绑定一个DAO/Mapper接口-->
+<mapper namespace="com.bytedance.dao.UserDao">
+<!--select查询语句,id相当于原来的函数名，resultType相当于返回值类型全限定名-->
+
+    <select id="getUserList" resultType="com.bytedance.pojo.User">
+    select * from yaojun.user;
+  </select>
+</mapper>
