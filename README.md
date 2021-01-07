@@ -36,4 +36,25 @@
 - 容易在并发场景下出问题
 - sqlSessionFactory一旦创建就应该在应用的运行期间一直存在，适合采用单例模式。
 - sqlSession每个线程都应该有自己的实例，不是线程安全的，不能共享。用完之后赶紧关闭。
-### 数据库字段和类属性名不匹配问题
+### 第一个mybatis程序
+- 配置环境
+- 导入mybatis
+- 编写代码
+- 测试
+- 依赖包：mybatis/connector/junit
+- mybatis把DAO层的实现类转化为了mapper配置文件，集中将sql语句放在一个文件中。
+### 注意点
+- 每个mapper.xml都需要在mybatis核心配置文件中注册。并且以斜杠隔开。
+- mapper.xml资源过滤问题。
+### 概念
+- mybatis是持久层框架
+### 日志
+- log4j:自定义输出格式，日志级别
+### 分页
+- 减少数据的处理量，加快响应速度。
+- 语法：select * from yaojun.user limit startIndex, pageSize; 如果只有一个参数表示0到n.
+## 缓存
+- 一级缓存：默认开启也关闭不掉，在sqlsession拿到和关闭之间有效，类似于map。
+-一级缓存失效：查询中间有增删改操作，查询不同的东西，强制刷新缓存，查询不同的mapper.xml。
+- 二级缓存：<cache/>,只要开启了二级缓存，在同一个mapper下有效，当前一个sqlsession关闭后，缓存的内容放入到二级缓存中再次利用。
+- 缓存顺序：先看二级，再看一级缓存，再走数据库。

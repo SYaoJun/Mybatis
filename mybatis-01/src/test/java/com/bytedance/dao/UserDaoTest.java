@@ -3,9 +3,12 @@ package com.bytedance.dao;
 import com.bytedance.pojo.User;
 import com.bytedance.util.MybatisUtil;
 import org.apache.ibatis.session.SqlSession;
+import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import java.util.List;
+
+
 
 public class UserDaoTest {
     @Test
@@ -80,5 +83,12 @@ public class UserDaoTest {
         sqlSession.commit();
         //关闭sqlSession
         sqlSession.close();
+    }
+    static Logger logger = Logger.getLogger(UserDaoTest.class);
+    @Test
+    public void testLog4j(){
+        logger.info("info");
+        logger.debug("debug");
+        logger.error("error");
     }
 }

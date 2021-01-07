@@ -1,0 +1,4 @@
+[INFO][21-01-07][com.bytedance.dao.UserDaoTest]info
+[DEBUG][21-01-07][com.bytedance.dao.UserDaoTest]debug
+[ERROR][21-01-07][com.bytedance.dao.UserDaoTest]error
+[DEBUG][21-01-07][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
